@@ -1,0 +1,91 @@
+body{
+  font-family: @base-font;
+  width: 800px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.tag{
+  background-color: grey;
+  color: white;
+  padding: .25em 0 .25em .5em;
+  margin: 0;
+  display: block;
+  float: left;
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    color: inherit;
+    padding: .25em;
+    &:hover{
+      color: fadeOut(white, 50%);
+    }
+  }
+}
+.fake-input{
+  float: left;
+  width: 100%;
+  padding: 10px;
+  background-color: fadeOut(grey, 50%);
+  .tag-list{
+    float: left;
+    max-width: 50%;
+    .tag{
+      float: right;
+    }
+  }
+  .right{
+    width: 50%;
+    float: left;
+    position: relative;
+  }
+  input{
+    float: left;
+    padding: .25em .5em;
+    display: block;
+    border: none;
+    font-size: 1em;
+    &:focus, &:visited{
+      border: none;
+      outline: none;
+    }
+  }
+  .the-one{
+    width: 80%;
+  }
+  .completion{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translate(0, 100%);
+    float: left;
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style-type: none;
+      width: 100%;
+
+      a{
+        background-color: white;
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        color: inherit;
+        padding: .25em .5em;
+        &:hover{
+          background-color: lighten(grey, 40%),
+        }
+      }
+    }
+  }
+}
+.memory{
+  float: left;
+  margin-top: 50px;
+  text-align: center;
+  border: solid 1px grey;
+  padding: 10px;
+  .tag{
+    margin: .1em;
+  }
+}

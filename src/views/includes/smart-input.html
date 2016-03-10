@@ -1,0 +1,26 @@
+<div class="fake-input">
+  <div class="tag-list">
+    <span class="tag" ng-repeat="tag in tags.current">{{tag}} <a href="" ng-click="tags.new.splice($index, 1)">x</a></span>
+  </div>
+  <div class="right">
+    <input
+      class="the-one"
+      type="text"
+      name="tags"
+      value=""
+      ng-model="tags.input"
+      ng-change="tags.handleInput()"
+    >
+    <input type="button" value="save" ng-click="tags.save()">
+    <div ng-if="tags.completions.length>0" class="completion">
+      <ul>
+        <li class="tag-comp" ng-repeat="tag in tags.completions"><a href="" ng-click="tags.input=tag.content+',';tags.handleInput();tags.completions = []">{{tag.content}}</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="memory">
+  <h2>Saved tags</h2>
+  <span class="tag" ng-repeat="tag in tags.list">{{tag.content}} <a href="" ng-click="tags.delete(tag, $index)">x</a></span>
+</div>
